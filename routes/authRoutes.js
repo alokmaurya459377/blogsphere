@@ -9,8 +9,4 @@ router.post("/login", login);
 
 router.get("/me", protect, getMe);
 
-router.get("/admin-test", protect, adminOnly, (req, res) => {
-  res.json({ message: "Welcome admin" });
-});
-
 module.exports = router;
