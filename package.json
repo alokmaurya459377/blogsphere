@@ -1,7 +1,7 @@
 {
   "name": "blogsphere",
   "version": "1.0.0",
-  "description": "A full-stack MERN blog platform with JWT authentication, role-based admin dashboard, rich-text editor, image uploads, search &amp; pagination — built to demonstrate end-to-end CRUD and REST API design.",
+  "description": "A full-stack MERN blog platform with JWT authentication, role-based admin dashboard, rich-text editor, image uploads, search &; pagination — built to demonstrate end-to-end CRUD and REST API design.",
   "main": "app.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",

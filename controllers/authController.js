@@ -6,7 +6,7 @@ const User = require("../models/User");
 // signup
 const signup = async (req, res) => {
   try {
-    const { name, email, password, role } = req.body;
+    const { name, email, password } = req.body;
 
     const existEmail = await User.findOne({ email });
     if (existEmail) {
@@ -20,7 +20,6 @@ const signup = async (req, res) => {
       name,
       email,
       password: hashedPassword,
-      role,
     });
 
     res.status(200).json({
@@ -30,7 +29,6 @@ const signup = async (req, res) => {
         id: user._id,
         name: user.name,
         email: user.email,
-        role: user.role,
       },
     });
   } catch (error) {
@@ -75,4 +73,16 @@ const login = async (req, res) => {
   }
 };
 
-module.exports = { signup, login };
+const getMe = (req, res) => {
+  res.status(200).json({
+    success: true,
+    user: {
+      id: req.user._id,
+      name: req.user.name,
+      email: req.user.email,
+      role: req.user.role,
+    },
+  });
+};
+
+module.exports = { signup, login, getMe };
